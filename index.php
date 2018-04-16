@@ -14,7 +14,7 @@
       <option value="none">none</option>
     </select>
     <label for="type">Type:</label>
-    <input type="text" name="type" id="type" placeholder="content for example" />
+    <input type="text" name="type" id="type" placeholder="content, mail ..." />
     <input type="submit" value="Submit">
   </form>
   <div id="monitor"></div>

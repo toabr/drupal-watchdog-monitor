@@ -74,6 +74,7 @@
     tableWrapper.appendChild(table);
 
     let headline = document.createElement('H2');
+    headline.classList.add('title');
     let title = file.split('/');
     headline.innerHTML = title[title.length - 1].split('.json')[0];
     document.body.appendChild(headline);

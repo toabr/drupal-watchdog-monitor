@@ -2,7 +2,7 @@
   --color-gray: #333;
   --color-gray-light: #555;
   --color-gray-lighter: #888;
-  --color-gray-dark: #181818;
+  --color-gray-dark: #222;
   --color-primary: tomato;
   --color-secondary: red;
 }
@@ -18,6 +18,7 @@ body {
   overflow: scroll;
 }
 table {
+  table-layout: auto;
   width: 100%;
   background: var(--color-gray);
   border-collapse: collapse;
@@ -49,6 +50,11 @@ h2 {
   color: var(--color-primary);
 }
 
+h2.title {
+  padding-top: 28px;
+  text-align: center;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -69,3 +75,5 @@ ul.main-menu li {
   padding: 5px 8px;
   background: var(--color-gray);
 }
+
+
