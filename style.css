@@ -1,31 +1,47 @@
 :root {
-  --color-gray: #333;
-  --color-gray-light: #555;
-  --color-gray-lighter: #888;
-  --color-gray-dark: #222;
-  --color-primary: tomato;
-  --color-secondary: red;
+  --color-primary: #F2552C;
+  --color-secondary: #24202e;
+  --color-secondary-light: #555;
+  --color-secondary-lighter: #888;
+  --color-secondary-dark: #1c1a25;
 }
 
 body {
-  background: var(--color-gray-dark);
+  background: var(--color-secondary-dark);
   color: #efefef;
   font-family: monospace;
   padding: 50px;
 }
+
+select, input {
+  border: 0;
+  padding: 12px 18px;
+  background: var(--color-secondary);
+  color: #efefef;
+  font-size: 14px;
+}
+
+input[type=submit] {
+  background: var(--color-primary);
+  font-weight: bold;
+}
+
 .table-wrapper {
   max-width: 100%;
-  overflow: scroll;
+  overflow-x: scroll;
 }
+
 table {
   table-layout: auto;
   width: 100%;
-  background: var(--color-gray);
+  background: var(--color-secondary);
   border-collapse: collapse;
 }
+
 thead, tbody td:first-child {
   font-weight: bold;
 }
+
 tr.emergency,
 tr.alert,
 tr.critical { background: mistyrose; color: red; }
@@ -33,18 +49,22 @@ tr.error { color: orangered; }
 tr.warning { color: wheat; }
 tr.notice { color: skyblue; }
 tr:hover {
-  background: var(--color-gray-light);
+  cursor: pointer;
+  background: var(--color-secondary-light);
 }
+
 th, td {
   padding: 3px 5px;
-  border: 1px solid var(--color-gray-dark);
+  border: 1px solid var(--color-secondary-dark);
 }
+
 h1 {
   text-align: center;
   color: var(--color-primary);
   padding-bottom: 8px;
   border-bottom: 1px dashed var(--color-primary);
 }
+
 h2 {
   /*padding-top: 50px;*/
   color: var(--color-primary);
@@ -73,7 +93,48 @@ ul.main-menu {
 ul.main-menu li {
   margin: 1px;
   padding: 5px 8px;
-  background: var(--color-gray);
+  background: var(--color-secondary);
 }
 
+body.details-view {
+  overflow: hidden;
+}
 
+.details-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.8);
+}
+
+.details-wrapper:hover {
+  cursor: pointer;
+}
+
+.details-wrapper:before {
+  content: 'X';
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 36px;
+}
+
+.details-wrapper > div {
+  cursor: default;
+  margin: 15% 15% 0;
+  padding: 18px;
+  background: var(--color-secondary);
+  border: 1px solid var(--color-primary);
+}
+
+.details-wrapper .detail {
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.details-wrapper .label {
+  font-weight: bold;
+  padding-right: 5px;
+}

@@ -1,6 +1,6 @@
 # Drupal watchdog monitor
 
-![picture of the app](screenshot.png)
+![picture of the app](img/screenshot_01.png)
 
 ### Installing
 

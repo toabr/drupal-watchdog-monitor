@@ -59,6 +59,7 @@
 
         let row = document.createElement("TR");
         row.classList.add(logObj[serial].severity);
+        row.addEventListener('click', showDetails);
         for (let field in logObj[serial]) {
           let cell = document.createElement("TD");
           cell.innerText = logObj[serial][field];
@@ -120,6 +121,32 @@
     });
   }
 
+  function showDetails() {
+    let detailsWrapper = document.createElement("DIV");
+    detailsWrapper.classList.add('details-wrapper');
+    let details = document.createElement("DIV");
+    detailsWrapper.addEventListener('click', function(e) {
+      // console.log(e.target);
+      if(e.target === this) {
+        document.body.removeChild(this);
+        document.body.classList.remove('details-view');
+      }
+    });
+    detailsWrapper.appendChild(details);
+
+    let labels = document.getElementsByTagName('TH');
+
+    data = this.getElementsByTagName('TD');
+    for(let i = 0; i < data.length; i++) {
+      let detail = document.createElement("DIV");
+      detail.classList.add('detail');
+      detail.innerHTML += '<span class="label">' + labels[i].innerText + ': </span>';
+      detail.innerHTML += '<span>' + data[i].innerText + '</span>';
+      details.appendChild(detail);
+    }
+    document.body.appendChild(detailsWrapper);
+    document.body.classList.add('details-view');
+  }
 
   ( function init() {
 
