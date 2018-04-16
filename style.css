@@ -1,16 +1,25 @@
+:root {
+  --color-gray: #333;
+  --color-gray-light: #555;
+  --color-gray-lighter: #888;
+  --color-gray-dark: #181818;
+  --color-primary: tomato;
+  --color-secondary: red;
+}
+
 body {
-  background: #181818;
+  background: var(--color-gray-dark);
   color: #efefef;
   font-family: monospace;
   padding: 50px;
 }
 .table-wrapper {
-  max-height: 300px;
-  overflow-y: scroll;
+  max-width: 100%;
+  overflow: scroll;
 }
 table {
   width: 100%;
-  background: #333;
+  background: var(--color-gray);
   border-collapse: collapse;
 }
 thead, tbody td:first-child {
@@ -22,16 +31,41 @@ tr.critical { background: mistyrose; color: red; }
 tr.error { color: orangered; }
 tr.warning { color: wheat; }
 tr.notice { color: skyblue; }
-td {
+tr:hover {
+  background: var(--color-gray-light);
+}
+th, td {
   padding: 3px 5px;
-  border: 1px solid #555;
+  border: 1px solid var(--color-gray-dark);
 }
 h1 {
   text-align: center;
-  color: lime;
-  border-bottom: 1px dashed lime;
+  color: var(--color-primary);
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--color-primary);
 }
 h2 {
-  padding-top: 50px;
-  color: lime;
+  /*padding-top: 50px;*/
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+ul.main-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.main-menu li {
+  margin: 1px;
+  padding: 5px 8px;
+  background: var(--color-gray);
 }

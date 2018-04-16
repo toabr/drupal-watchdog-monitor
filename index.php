@@ -1,8 +1,3 @@
-<?php
-  $files = glob('logs/*.json', GLOB_BRACE);
-  $aliases = fopen("aliases.txt", "r");
-?>
-
 <html>
 <head>
   <meta charset="UTF-8">
@@ -12,14 +7,9 @@
 <body>
 
   <h1>Drupal Monitor</h1>
-  <div id="monitor">
+  <div id="menu"></div>
+  <div id="monitor"></div>
 
-  </div>
-
-  <script>
-    var sites = <?php echo json_encode($files); ?>;
-  </script>
   <script type="text/javascript" src="script.js"></script>
-
 </body>
 </html>
