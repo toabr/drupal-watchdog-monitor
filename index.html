@@ -2,22 +2,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Drupal Monitor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, ser-scalable=no"/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <h1>Drupal Monitor</h1>
+
   <form id="filter" method="get">
-    <h2>Filter</h2>
-    <label for="log-files">File:</label>
-    <select name="file" id="log-files">
-      <option value="none">none</option>
-    </select>
-    <label for="type">Type:</label>
-    <input type="text" name="type" id="type" placeholder="content, mail ..." />
-    <input type="submit" value="filter">
+    <div class="form-field">
+      <label for="filter-files">File</label>
+      <select name="file" id="filter-file">
+        <!-- <option value="none">none</option> -->
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="filter-type">Type</label>
+      <input type="text" name="type" id="filter-type" placeholder="content, mail ..." />
+    </div>
+    <div class="form-field">
+      <label for="filter-severity">Severity</label>
+      <input type="text" name="severity" id="filter-severity" placeholder="notice, warning ..." />
+    </div>
+    <div class="form-field">
+      <input type="submit" value="Filter">
+    </div>
   </form>
-  <div id="monitor"></div>
+
+  <div id="log"></div>
 
   <script type="text/javascript" src="script.js"></script>
 </body>
